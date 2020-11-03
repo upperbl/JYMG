@@ -14,4 +14,6 @@ public interface PlayerRepository extends JpaRepository<Players, String> {
     List<Players> findByClanTagAndTagNotInOrderByActiveRankDesc(String clanTag, Collection<String> tag);
 
     List<Players> findByClanTag(String clanTag);
+    //查詢出來按捐兵數量排序
+    List<Players> findByClanTagOrderByDonationsDesc(String clanTag);
 }

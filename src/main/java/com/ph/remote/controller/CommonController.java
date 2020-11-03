@@ -70,19 +70,34 @@ public class CommonController {
         clantag.replace("#","\\%23");
         //System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa  "+clantag);
         //List<Players> playersList = playerService.findByClanTagIgnoreSome(clantag, Collections.singleton("clanTag"));
-        List<Players> playersList = playerService.findAll();
-
+        //List<Players> playersList = playerService.findAll();
+        List<Players> playersList = playerService.findByClanTagIgnoreSome("%23GVR820LU", Collections.singleton("clanTag"));
         //if(playersList == null) {
             if(playersList.size()==0) {
                 {
                     commonReturn.fail("没有该部落 "+clantag);
                 }
-
         }
         else{
             commonReturn.success(playersList);
         }
         return commonReturn;
     }
+    //某个部落所有玩家的信息#Y0LQPQU99
+    @RequestMapping("/clans/players/donatedesc/{clantag}")
+    public CommonReturn getPlayersByDonated(@PathVariable String clantag){
+        CommonReturn commonReturn = new CommonReturn();
+        List<Players> playersList = playerService.findByClanTagOrderByDonationsDesc("%23GVR820LU");
 
+        if(playersList.size()==0) {
+            {
+                commonReturn.fail("没有该部落 "+clantag);
+            }
+        }
+        else{
+
+            commonReturn.success(playersList);
+        }
+        return commonReturn;
+    }
 }

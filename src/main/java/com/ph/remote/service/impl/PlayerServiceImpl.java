@@ -48,6 +48,10 @@ public class PlayerServiceImpl implements PlayerService {
         playerRepository.deleteById(tag);
     }
 
+    @Override
+    public List<Players> findByClanTagOrderByDonationsDesc(String clantag) {
+        return playerRepository.findByClanTagOrderByDonationsDesc(clantag);
+    }
 
 
 }

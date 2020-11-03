@@ -16,4 +16,6 @@ public interface PlayerService {
 
     List<Players> findByClanTag(String tag);
     void deleteByPlayerTag(String tag);
+
+    List<Players> findByClanTagOrderByDonationsDesc(String clantag);
 }
