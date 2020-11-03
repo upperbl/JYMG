@@ -194,8 +194,8 @@
         methods: {
 
             loadData: async function () {
-                //const { data: res } = await axiosGetRequst('http://localhost:8080/dayrain/clans/players/LLPRRYP08');
-                const { data: res } = await axiosGetRequst('http://localhost:8080/clans/players/donatedesc/%23GVR820LU');
+                //const { data: res } = await axiosGetRequst('http://localhost:80/dayrain/clans/players/LLPRRYP08');
+                const { data: res } = await axiosGetRequst('http://180.76.60.45:80/clans/players/donatedesc/%23GVR820LU');
                 this.memberList = res;
                 this.updateTime = res[0].updateTime;
 
