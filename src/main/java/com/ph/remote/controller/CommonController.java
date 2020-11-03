@@ -32,7 +32,7 @@ public class CommonController {
     public String hello()  {
 
 
-        return "hello";
+        return "rank";
     }
 
 
